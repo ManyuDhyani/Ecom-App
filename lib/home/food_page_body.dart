@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:ecom_app/utils/colors.dart';
+import 'package:ecom_app/utils/dimensions.dart';
 import 'package:ecom_app/widgets/big_text.dart';
 import 'package:ecom_app/widgets/icon_and_text_widgets.dart';
 import 'package:ecom_app/widgets/small_text.dart';
@@ -38,7 +39,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     return Column(
       children: [
         Container(
-          height: 320,
+          height: Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -91,10 +92,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       child: Stack(
         children: [
           Container(
-            height: 220,
-            margin: EdgeInsets.only(left: 10, right: 10),
+            height: Dimensions.pageViewContainer,
+            margin: EdgeInsets.only(
+                left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(Dimensions.radius30),
               color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
               image: DecorationImage(
                 fit: BoxFit.cover,
@@ -105,10 +107,14 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 120,
-              margin: EdgeInsets.only(left: 20, right: 20, bottom: 16),
+              height: Dimensions.pageViewTextContainer,
+              margin: EdgeInsets.only(
+                left: Dimensions.width40,
+                right: Dimensions.width40,
+                bottom: Dimensions.height16,
+              ),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
@@ -126,14 +132,16 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     )
                   ]),
               child: Container(
-                padding: EdgeInsets.only(top: 15, left: 15, right: 15),
+                padding: EdgeInsets.only(
+                    top: Dimensions.height15, left: 15, right: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     BigText(
                       text: "Chinese Side",
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: Dimensions.height10),
+                    // Comments Section
                     Row(
                       children: [
                         Wrap(
@@ -146,17 +154,18 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             ),
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: Dimensions.width10),
                         SmallText(text: "4.5"),
-                        const SizedBox(width: 10),
+                        SizedBox(width: Dimensions.width20),
                         SmallText(text: "1287"),
-                        const SizedBox(width: 10),
+                        SizedBox(width: Dimensions.width10),
                         SmallText(text: "comments"),
                       ],
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: Dimensions.height15),
+                    // Time and Distance
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconAndTextWidget(
                           icon: Icons.circle_sharp,
