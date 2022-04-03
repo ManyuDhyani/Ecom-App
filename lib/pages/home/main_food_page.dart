@@ -1,4 +1,4 @@
-import 'package:ecom_app/home/food_page_body.dart';
+import 'package:ecom_app/pages/home/food_page_body.dart';
 import 'package:ecom_app/utils/colors.dart';
 import 'package:ecom_app/utils/dimensions.dart';
 import 'package:ecom_app/widgets/big_text.dart';
