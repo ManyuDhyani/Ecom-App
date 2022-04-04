@@ -1,4 +1,5 @@
 import 'package:ecom_app/utils/dimensions.dart';
+import 'package:ecom_app/widgets/app_icon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,18 @@ class PopularFoodDetail extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
+          Positioned(
+              top: Dimensions.height45,
+              left: Dimensions.width20,
+              right: Dimensions.width20,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  AppIcon(icon: Icons.arrow_back_ios),
+                  AppIcon(icon: Icons.shopping_cart_outlined),
+                ],
+              ))
         ],
       ),
     );
