@@ -1,5 +1,7 @@
+import 'package:ecom_app/utils/colors.dart';
 import 'package:ecom_app/utils/dimensions.dart';
 import 'package:ecom_app/widgets/app_icon.dart';
+import 'package:ecom_app/widgets/big_text.dart';
 import 'package:ecom_app/widgets/short_detail_food_app_column.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +11,7 @@ class PopularFoodDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -55,10 +58,74 @@ class PopularFoodDetail extends StatelessWidget {
                 ),
                 color: Colors.white,
               ),
-              child: ShortDetailAppColumn(text: "Chinese Side"),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ShortDetailAppColumn(text: "Chinese Side"),
+                  SizedBox(height: Dimensions.height20),
+                  BigText(text: "Overview"),
+                ],
+              ),
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: Dimensions.bottomHeightBar,
+        padding: EdgeInsets.only(
+          top: Dimensions.height20,
+          left: Dimensions.width20,
+          right: Dimensions.width20,
+        ),
+        decoration: BoxDecoration(
+          color: AppColors.buttonBackgroundColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(Dimensions.radius20 * 2),
+            topRight: Radius.circular(Dimensions.radius20 * 2),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.only(
+                top: Dimensions.height20,
+                bottom: Dimensions.height20,
+                left: Dimensions.width20,
+                right: Dimensions.width20,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: Colors.white,
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.remove, color: AppColors.signColor),
+                  SizedBox(width: Dimensions.width10 / 2),
+                  BigText(text: "0"),
+                  SizedBox(width: Dimensions.width10 / 2),
+                  Icon(Icons.add, color: AppColors.signColor),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(
+                top: Dimensions.height20,
+                bottom: Dimensions.height20,
+                left: Dimensions.width20,
+                right: Dimensions.width20,
+              ),
+              child: BigText(
+                text: "₹ 9990 | Add to cart",
+                color: Colors.white,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: AppColors.mainColor,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

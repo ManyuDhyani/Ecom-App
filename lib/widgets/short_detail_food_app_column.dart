@@ -16,6 +16,7 @@ class ShortDetailAppColumn extends StatelessWidget {
       children: [
         BigText(
           text: text,
+          size: Dimensions.font26,
         ),
         SizedBox(height: Dimensions.height10),
         // Comments Section
