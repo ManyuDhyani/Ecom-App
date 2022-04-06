@@ -2,6 +2,7 @@ import 'package:ecom_app/utils/colors.dart';
 import 'package:ecom_app/utils/dimensions.dart';
 import 'package:ecom_app/widgets/app_icon.dart';
 import 'package:ecom_app/widgets/big_text.dart';
+import 'package:ecom_app/widgets/expandable_text_widget.dart';
 import 'package:ecom_app/widgets/short_detail_food_app_column.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class PopularFoodDetail extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
+          // Background Image
           Positioned(
             left: 0,
             right: 0,
@@ -28,6 +30,7 @@ class PopularFoodDetail extends StatelessWidget {
               ),
             ),
           ),
+          // Icon Widget
           Positioned(
             top: Dimensions.height45,
             left: Dimensions.width20,
@@ -40,6 +43,7 @@ class PopularFoodDetail extends StatelessWidget {
               ],
             ),
           ),
+          // Overview Food Title
           Positioned(
             top: Dimensions.popularFoodImgSize - 20,
             bottom: 0,
@@ -63,7 +67,17 @@ class PopularFoodDetail extends StatelessWidget {
                 children: [
                   ShortDetailAppColumn(text: "Chinese Side"),
                   SizedBox(height: Dimensions.height20),
-                  BigText(text: "Overview"),
+                  BigText(text: "Description"),
+                  SizedBox(height: Dimensions.height20),
+                  // Expandable Text Widget
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: ExpandableTextWidget(
+                          text:
+                              "They told her that this was her once chance to show the world what she was made of. She believed them at the time. It was the big stage and she knew the world would be there to see. The only one who had disagreed with this sentiment was her brother. He had told her that you don't show the world what you're made of when they are all watching, you show that in your actions when nobody was looking. It was looking more and more like her brother was correct."),
+                    ),
+                  ),
+                  SizedBox(height: Dimensions.height20),
                 ],
               ),
             ),
@@ -123,7 +137,7 @@ class PopularFoodDetail extends StatelessWidget {
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: AppColors.mainColor,
               ),
-            )
+            ),
           ],
         ),
       ),
